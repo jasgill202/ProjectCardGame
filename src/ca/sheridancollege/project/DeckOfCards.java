@@ -8,10 +8,10 @@ package ca.sheridancollege.project;
  * @author Paul Bonenfant Jan 2020
  */
 public class DeckOfCards {
-	private int _size;
-	public Game _unnamed_Game_29;
-	public Card _unnamed_Card_30;
-	public Card _consists_of;
+	private int size;
+	public Game unnamed_Game_29;
+	public Card unnamed_Card_30;
+	public Card consists_of;
 
 	/**
 	 * the size of the grouping
@@ -25,10 +25,10 @@ public class DeckOfCards {
 	}
 
 	public void setSize(int aSize) {
-		this._size = aSize;
+		this.size = aSize;
 	}
 
 	public int getSize() {
-		return this._size;
+		return this.size;
 	}
 }

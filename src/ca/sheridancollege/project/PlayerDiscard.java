@@ -1,11 +1,11 @@
 package ca.sheridancollege.project;
 
 public class PlayerDiscard {
-	private Card _pDiscardCards;
-	private int _pDiscardSize;
-	private int _pNewDeckSize;
-	private Card _pNewDeckCards;
-	public PlayArea _unnamed_PlayArea_12;
+	private Card pDiscardCards;
+	private int pDiscardSize;
+	private int pNewDeckSize;
+	private Card pNewDeckCards;
+	public PlayArea unnamed_PlayArea_12;
 
 	public Card getPDeckCards() {
 		throw new UnsupportedOperationException();
@@ -16,11 +16,11 @@ public class PlayerDiscard {
 	}
 
 	public int getPDiscardSize() {
-		return this._pDiscardSize;
+		return this.pDiscardSize;
 	}
 
 	public void setPDiscardSize(int aPDiscardSize) {
-		this._pDiscardSize = aPDiscardSize;
+		this.pDiscardSize = aPDiscardSize;
 	}
 
 	public void shuffle() {
@@ -28,18 +28,18 @@ public class PlayerDiscard {
 	}
 
 	public int getPNewDeckSize() {
-		return this._pNewDeckSize;
+		return this.pNewDeckSize;
 	}
 
 	public void setPNewDeckSize(int aPNewDeckSize) {
-		this._pNewDeckSize = aPNewDeckSize;
+		this.pNewDeckSize = aPNewDeckSize;
 	}
 
 	public Card getPNewDeckCards() {
-		return this._pNewDeckCards;
+		return this.pNewDeckCards;
 	}
 
 	public void setPNewDeckCards(Card aPNewDeckCards) {
-		this._pNewDeckCards = aPNewDeckCards;
+		this.pNewDeckCards = aPNewDeckCards;
 	}
 }

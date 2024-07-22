@@ -7,8 +7,8 @@ package ca.sheridancollege.project;
  * @author Paul Bonenfant Jan 2020
  */
 public abstract class Player {
-	private String _name;
-	public Game _unnamed_Game_1;
+	private String name;
+	public Game unnamed_Game_1;
 
 	/**
 	 * A constructor that allows you to set the player's unique ID
@@ -25,10 +25,10 @@ public abstract class Player {
 	public abstract void play();
 
 	public void setName(String aName) {
-		this._name = aName;
+		this.name = aName;
 	}
 
 	public String getName() {
-		return this._name;
+		return this.name;
 	}
 }

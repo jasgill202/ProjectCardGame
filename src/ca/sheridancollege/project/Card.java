@@ -9,10 +9,10 @@ package ca.sheridancollege.project;
  * @modifier
  */
 public abstract class Card {
-	private String _suit;
-	private int _value;
-	public DeckOfCards _consists_of;
-	public DeckOfCards _unnamed_DeckOfCards_33;
+	private String suit;
+	private int value;
+	public DeckOfCards consists_of;
+	public DeckOfCards unnamed_DeckOfCards_33;
 
 	/**
 	 * Students should implement this method for their specific children classes
@@ -22,18 +22,18 @@ public abstract class Card {
 	public abstract String toString();
 
 	public String getSuit() {
-		return this._suit;
+		return this.suit;
 	}
 
 	public void setSuit(String aSuit) {
-		this._suit = aSuit;
+		this.suit = aSuit;
 	}
 
 	public int getValue() {
-		return this._value;
+		return this.value;
 	}
 
 	public void setValue(int aValue) {
-		this._value = aValue;
+		this.value = aValue;
 	}
 }

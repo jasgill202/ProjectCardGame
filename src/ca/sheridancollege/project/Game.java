@@ -8,10 +8,10 @@ package ca.sheridancollege.project;
  * @author Paul Bonenfant Jan 2020
  */
 public abstract class Game {
-	private final String _name;
-	public Player _unnamed_Player_5;
-	public Result _unnamed_Result_6;
-	public DeckOfCards _unnamed_DeckOfCards_7;
+	private final String name;
+	public Player unnamed_Player_5;
+	public Result unnamed_Result_6;
+	public DeckOfCards unnamed_DeckOfCards_7;
 
 	/**
 	 * the players of the game
@@ -31,6 +31,6 @@ public abstract class Game {
 	public abstract void declareWinner();
 
 	public String getName() {
-		return this._name;
+		return this.name;
 	}
 }
