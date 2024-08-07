@@ -1,8 +1,12 @@
 package ca.sheridancollege.project;
+/**
+ *
+ * @author jasme
+ */
 
 public class Draw {
 
-	public void regDraw() {
-		throw new UnsupportedOperationException();
-	}
+	public Card regDraw(DeckOfCards deck) {
+        return deck.drawCard();
+        }
 }
