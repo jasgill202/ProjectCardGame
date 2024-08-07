@@ -1,45 +1,38 @@
 package ca.sheridancollege.project;
+/**
+ *
+ * @author jasme
+ * modified by Stefan
+ */
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class PlayerDiscard {
-	private Card pDiscardCards;
-	private int pDiscardSize;
-	private int pNewDeckSize;
-	private Card pNewDeckCards;
-	public PlayArea unnamed_PlayArea_12;
+    private final ArrayList<Card> discardPile;
 
-	public Card getPDeckCards() {
-		throw new UnsupportedOperationException();
-	}
+    public PlayerDiscard() {
+        this.discardPile = new ArrayList<>();
+    }
 
-	public void setPDeckCards(Card aPDeckCards) {
-		throw new UnsupportedOperationException();
-	}
+    public void addCard(Card card) {
+        discardPile.add(card);
+    }
 
-	public int getPDiscardSize() {
-		return this.pDiscardSize;
-	}
+    public void addCards(ArrayList<Card> cards) {
+        discardPile.addAll(cards);
+    }
 
-	public void setPDiscardSize(int aPDiscardSize) {
-		this.pDiscardSize = aPDiscardSize;
-	}
+    public int getDiscardPileSize() {
+        return discardPile.size();
+    }
 
-	public void shuffle() {
-		throw new UnsupportedOperationException();
-	}
+    public void clear() {
+        discardPile.clear();
+    }
 
-	public int getPNewDeckSize() {
-		return this.pNewDeckSize;
-	}
-
-	public void setPNewDeckSize(int aPNewDeckSize) {
-		this.pNewDeckSize = aPNewDeckSize;
-	}
-
-	public Card getPNewDeckCards() {
-		return this.pNewDeckCards;
-	}
-
-	public void setPNewDeckCards(Card aPNewDeckCards) {
-		this.pNewDeckCards = aPNewDeckCards;
-	}
+    public void shuffleIntoDeck(PlayerDeck playerDeck) {
+        playerDeck.addCards(discardPile);
+        Collections.shuffle(discardPile);
+        discardPile.clear();
+    }
 }

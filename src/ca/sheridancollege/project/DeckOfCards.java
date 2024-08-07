@@ -1,34 +1,48 @@
+/*Editted by Stefan Forrest*/
 package ca.sheridancollege.project;
-
 /**
- * A concrete class that represents any grouping of cards for a Game. HINT, you might want to subclass this more than
- * once. The group of cards has a maximum size attribute which is flexible for reuse.
- * 
- * @author dancye
- * @author Paul Bonenfant Jan 2020
+ *
+ * @author @author jasme
+ * modified by Stefan
  */
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class DeckOfCards {
-	private int size;
-	public Game unnamed_Game_29;
-	public Card unnamed_Card_30;
-	public Card consists_of;
+    private ArrayList<Card> cards;
 
-	/**
-	 * the size of the grouping
-	 */
-	public DeckOfCards(int aSize) {
-		throw new UnsupportedOperationException();
-	}
+    public DeckOfCards() {
+        this.cards = new ArrayList<>();
+    }
 
-	public void shuffle() {
-		throw new UnsupportedOperationException();
-	}
+    public void addCard(Card card) {
+        cards.add(card);
+    }
 
-	public void setSize(int aSize) {
-		this.size = aSize;
-	}
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
 
-	public int getSize() {
-		return this.size;
-	}
+    public Card drawCard() {
+        return cards.remove(0);
+    }
+
+    public int getSize() {
+    return cards.size();
+    }
+
+    // Method to initialize the deck using the CardFactory
+    public void initializeDeck() {
+        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        for (String suit : suits) {
+            for (int value = 1; value <= 13; value++) {
+                addCard(CardFactory.createCard(suit, value));
+            }
+        }
+        shuffle();
+    }
+    //Added this method for testing:
+    public ArrayList<Card> getCards(){
+    return cards;
+    }
 }

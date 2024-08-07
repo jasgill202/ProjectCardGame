@@ -1,28 +1,56 @@
 package ca.sheridancollege.project;
+/**
+ *
+ * @author jasme
+
+ */
+import java.util.ArrayList;
 
 public class CompDeck {
-	private int cDeckSize;
-	private Card cDeckCards;
-	public PlayArea unnamed_PlayArea_9;
-	public DeckOfCards consists_of;
+    private final ArrayList<Card> compDeck;
 
-	public int getCDeckSize() {
-		return this.cDeckSize;
-	}
+    public CompDeck() {
+        this.compDeck = new ArrayList<>();
+    }
 
-	public void setCDeckSize(int aCDeckSize) {
-		this.cDeckSize = aCDeckSize;
-	}
+    public void addCard(Card card) {
+        compDeck.add(card);
+    }
 
-	public Card getCDeckCards() {
-		return this.cDeckCards;
-	}
+    public void addCards(ArrayList<Card> cards) {
+        compDeck.addAll(cards);
+    }
 
-	public void setCDeckCards(Card aCDeckCards) {
-		this.cDeckCards = aCDeckCards;
-	}
+    public Card drawCard() {
+        if (compDeck.isEmpty()) {
+            return null;
+        }
+        return compDeck.remove(0);
+    }
 
-	public void shuffle() {
-		throw new UnsupportedOperationException();
-	}
+    public ArrayList<Card> drawWarCards() {
+        ArrayList<Card> warCards = new ArrayList<>();
+        for (int i = 0; i < 4 && !compDeck.isEmpty(); i++) {
+            warCards.add(drawCard());
+        }
+        return warCards;
+    }
+
+    public int getCDeckSize() {
+        return compDeck.size();
+    }
+
+    public void clear() {
+        compDeck.clear();
+    }
+
+    public ArrayList<Card> getAllCards() {
+        ArrayList<Card> allCards = new ArrayList<>(compDeck);
+        clear();
+        return allCards;
+    }
+
+    public void refill(CompDiscard compDiscard) {
+        compDiscard.shuffleIntoDeck(this);
+    }
 }

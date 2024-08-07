@@ -1,28 +1,57 @@
 package ca.sheridancollege.project;
+/**
+ *
+ * @author jasme
+ * modified by Stefan
+ */
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class PlayerDeck {
-	private int pDeckSize;
-	private Card pDeckCards;
-	public PlayArea unnamed_PlayArea_26;
-	public DeckOfCards consists_of;
+    private final ArrayList<Card> playerDeck;
 
-	public int getPDeckSize() {
-		return this.pDeckSize;
-	}
+    public PlayerDeck() {
+        this.playerDeck = new ArrayList<>();
+    }
 
-	public void setPDeckSize(int aPDeckSize) {
-		this.pDeckSize = aPDeckSize;
-	}
+    public void addCard(Card card) {
+        playerDeck.add(card);
+    }
 
-	public Card getPDeckCards() {
-		return this.pDeckCards;
-	}
+    public void addCards(ArrayList<Card> cards) {
+        playerDeck.addAll(cards);
+    }
 
-	public void setPDeckCards(Card aPDeckCards) {
-		this.pDeckCards = aPDeckCards;
-	}
+    public Card drawCard() {
+        if (playerDeck.isEmpty()) {
+            return null;
+        }
+        return playerDeck.remove(0);
+    }
 
-	public void shuffle() {
-		throw new UnsupportedOperationException();
-	}
+    public ArrayList<Card> drawWarCards() {
+        ArrayList<Card> warCards = new ArrayList<>();
+        for (int i = 0; i < 4 && !playerDeck.isEmpty(); i++) {
+            warCards.add(drawCard());
+        }
+        return warCards;
+    }
+
+    public int getPDeckSize() {
+        return playerDeck.size();
+    }
+
+    public void clear() {
+        playerDeck.clear();
+    }
+
+    public ArrayList<Card> getAllCards() {
+        ArrayList<Card> allCards = new ArrayList<>(playerDeck);
+        clear();
+        return allCards;
+    }
+
+    public void refill(PlayerDiscard playerDiscard) {
+        playerDiscard.shuffleIntoDeck(this);
+    }
 }
