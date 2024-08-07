@@ -14,15 +14,20 @@ import java.util.Collections;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author Stefan 2024
+ * @author Jasmeet 2024
+ * @author Mohamed 2024
  */
+
 public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
     private ArrayList<Card> cards;
-    private int size;//the size of the grouping
+    private int size; // the size of the grouping
 
     public GroupOfCards(int size) {
         this.size = size;
+        this.cards = new ArrayList<>(size);
     }
 
     /**
@@ -52,4 +57,17 @@ public class GroupOfCards {
         this.size = size;
     }
 
-}//end class
+    public void addCard(Card card) {
+        if (cards.size() < size) {
+            cards.add(card);
+        }
+    }
+
+    public Card drawCard() {
+        if (!cards.isEmpty()) {
+            return cards.remove(0);
+        }
+        return null;
+    }
+}
+
